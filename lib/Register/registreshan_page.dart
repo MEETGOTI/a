@@ -24,15 +24,15 @@ class _profile_pageState extends State<profile_page> {
   final weightController = TextEditingController();
   final heightController = TextEditingController();
 
-  @override
-  void dispose() {
-    // Clean up the controller when the widget is disposed.
-    ganderController.dispose();
-    dateController.dispose();
-    weightController.dispose();
-    heightController.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   // Clean up the controller when the widget is disposed.
+  //   ganderController.dispose();
+  //   dateController.dispose();
+  //   weightController.dispose();
+  //   heightController.dispose();
+  //   super.dispose();
+  // }
 
   clearText() {
     ganderController.clear();
