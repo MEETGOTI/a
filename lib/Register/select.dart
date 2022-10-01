@@ -97,7 +97,9 @@ class _new_pageState extends State<new_page> {
         .doc("user_work_data")
         .collection("user_work_data")
         .add({"selected": checkBoxListTileModel[0].title})
+        // ignore: avoid_print
         .then((value) => print('User Added'))
+        // ignore: avoid_print
         .catchError((error) => print('Failed to Add user: $error'));
   }
 
