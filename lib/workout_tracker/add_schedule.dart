@@ -86,7 +86,7 @@ class _add_schedulesState extends State<add_schedules> {
                     height: 30,
                     minWidth: 15,
                     onPressed: () {
-                      Navigator.push(
+                      Navigator.pop(
                         context,
                         MaterialPageRoute(builder: (context) {
                           return TodaysTaskScreen(
@@ -95,6 +95,7 @@ class _add_schedulesState extends State<add_schedules> {
                         }),
                       );
                     },
+
                     child: const Icon(
                       Icons.clear_rounded,
                       size: 20,
@@ -413,8 +414,7 @@ class _add_schedulesState extends State<add_schedules> {
             padding: const EdgeInsets.only(bottom: 40),
             child: InkWell(
               onTap: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) {
+                Navigator.of(context).pop(MaterialPageRoute(builder: (context) {
                   return TodaysTaskScreen(
                     name: _chosenDateTime,
                   );

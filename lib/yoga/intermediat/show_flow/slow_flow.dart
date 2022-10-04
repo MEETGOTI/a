@@ -33,7 +33,14 @@ class _Slow_flow1State extends State<Slow_flow1> {
                     // color: Colors.white,
                     height: 30,
                     minWidth: 15,
-                    onPressed: () => Get.to(() => const Intermediat()),
+                    onPressed: () {
+                      Navigator.pop(
+                        context,
+                        MaterialPageRoute(builder: (context) {
+                          return const Intermediat();
+                        }),
+                      );
+                    },
                     child: const Icon(
                       Icons.arrow_back_ios_outlined,
                       size: 15,
