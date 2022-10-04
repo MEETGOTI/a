@@ -127,7 +127,7 @@ class _pageState extends State<page> {
         Padding(
           padding: const EdgeInsets.only(bottom: 30),
           child: InkWell(
-            onTap: () => Get.to(const profile()),
+            onTap: () => Get.to(() => const profile()),
             child: Container(
               height: 50,
               width: MediaQuery.of(context).size.width - 50,

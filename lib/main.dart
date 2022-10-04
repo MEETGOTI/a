@@ -1,6 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-
+import 'package:fittnessapp/bottom_bar/bottom_nevigation.dart';
 import 'package:fittnessapp/createaccount/create_account.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -31,21 +33,22 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       home: SafeArea(
-        child: Scaffold(body: loginpage()),
+        child: Scaffold(
+          body: StreamBuilder(
+            stream: FirebaseAuth.instance.authStateChanges(),
+            builder: (BuildContext context, snapshot) {
+              if (snapshot.hasData) {
+                return const bottum_page();
+              } else {
+                return const loginpage();
+              }
+            },
+          ),
+        ),
       ),
     );
   }
 }
-// StreamBuilder(
-//         stream: FirebaseAuth.instance.authStateChanges(),
-//         builder: (BuildContext context, snapshot) {
-//           if (snapshot.hasData) {
-//             return home();
-//           } else {
-//             return loginpage();
-//           }
-//         },
-//       ),

@@ -35,7 +35,14 @@ class _inner_peaceState extends State<inner_peace> {
                     // color: Colors.white,
                     height: 30,
                     minWidth: 15,
-                    onPressed: () => Get.to(const beginner()),
+                    onPressed: () {
+                      Navigator.pop(
+                        context,
+                        MaterialPageRoute(builder: (context) {
+                          return const beginner();
+                        }),
+                      );
+                    },
                     child: const Icon(
                       Icons.arrow_back_ios_outlined,
                       size: 15,
@@ -62,7 +69,7 @@ class _inner_peaceState extends State<inner_peace> {
           Padding(
             padding: const EdgeInsets.only(bottom: 20),
             child: InkWell(
-              onTap: () => Get.to(const inner_peace_set()),
+              onTap: () => Get.to(() => const inner_peace_set()),
               child: Container(
                 height: 50,
                 width: MediaQuery.of(context).size.width - 50,

@@ -51,24 +51,20 @@ class _loginState extends State<login> {
       );
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        print("No User Found for that Email");
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            backgroundColor: Colors.orangeAccent,
             content: Text(
               "No User Found for that Email",
-              style: TextStyle(fontSize: 18.0, color: Colors.black),
+              style: TextStyle(fontSize: 16.0, color: Colors.black),
             ),
           ),
         );
       } else if (e.code == 'wrong-password') {
-        print("Wrong Password Provided by User");
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            backgroundColor: Colors.orangeAccent,
             content: Text(
               "Wrong Password Provided by User",
-              style: TextStyle(fontSize: 18.0, color: Colors.black),
+              style: TextStyle(fontSize: 16.0, color: Colors.black),
             ),
           ),
         );

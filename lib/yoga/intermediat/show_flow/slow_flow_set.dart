@@ -1,6 +1,7 @@
 import 'package:fittnessapp/yoga/intermediat/inner_peace/inner_peace_start.dart';
 import 'package:fittnessapp/yoga/intermediat/show_flow/slow_flow.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 // ignore: camel_case_types
 class show_flow_set1 extends StatefulWidget {
@@ -31,13 +32,7 @@ class _show_flow_set1State extends State<show_flow_set1> {
                   // color: Colors.white,
                   height: 30,
                   minWidth: 15,
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) {
-                        return const Slow_flow1();
-                      }),
-                    );
-                  },
+                  onPressed: () => Get.to(() => const Slow_flow1()),
                   child: const Icon(
                     Icons.arrow_back_ios_outlined,
                     size: 15,

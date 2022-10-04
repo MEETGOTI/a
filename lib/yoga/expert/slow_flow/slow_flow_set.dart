@@ -32,7 +32,14 @@ class _slow_flow_set2State extends State<slow_flow_set2> {
                   // color: Colors.white,
                   height: 30,
                   minWidth: 15,
-                  onPressed: () => Get.to(const Slow_flow2()),
+                  onPressed: () {
+                    Navigator.pop(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return const Slow_flow2();
+                      }),
+                    );
+                  },
                   child: const Icon(
                     Icons.arrow_back_ios_outlined,
                     size: 15,

@@ -3,6 +3,7 @@ import 'package:fittnessapp/workout_tracker/fullbody/fullbody_workout.dart';
 import 'package:fittnessapp/workout_tracker/lowerbody/lowerbody_workout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
+import 'package:get/get.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 // ignore: import_of_legacy_library_into_null_safe
@@ -278,13 +279,7 @@ class _activityState extends State<activity> {
                 Padding(
                   padding: const EdgeInsets.only(right: 20),
                   child: InkWell(
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) {
-                          return const sleep();
-                        }),
-                      );
-                    },
+                    onTap: () => Get.to(() => const sleep()),
                     child: Container(
                       height: 160,
                       width: 150,
@@ -475,13 +470,7 @@ class _page2State extends State<page2> {
           Padding(
             padding: const EdgeInsets.only(right: 18, left: 18),
             child: InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) {
-                    return navi[a];
-                  }),
-                );
-              },
+              onTap: () => Get.to(() => navi[a]),
               child: SizedBox(
                 height: 80,
                 child: Card(

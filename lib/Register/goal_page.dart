@@ -50,7 +50,7 @@ class _goal_pageState extends State<goal_page> {
               const banner(),
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
+                    const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
                 child: Ink(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),

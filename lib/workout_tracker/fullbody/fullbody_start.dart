@@ -100,7 +100,7 @@ class _body_startState extends State<body_start> with TickerProviderStateMixin {
                   height: 30,
                   minWidth: 15,
                   onPressed: () {
-                    Navigator.of(context).push(
+                    Navigator.of(context).pop(
                       MaterialPageRoute(builder: (context) {
                         return const fullbody();
                       }),

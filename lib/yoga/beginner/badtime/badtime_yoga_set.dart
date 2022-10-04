@@ -33,7 +33,14 @@ class _badtime_setState extends State<badtime_set> {
                   // color: Colors.white,
                   height: 30,
                   minWidth: 15,
-                  onPressed: () => Get.to(const bad_time()),
+                  onPressed: () {
+                    Navigator.pop(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return const bad_time();
+                      }),
+                    );
+                  },
                   child: const Icon(
                     Icons.arrow_back_ios_outlined,
                     size: 15,

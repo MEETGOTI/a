@@ -36,7 +36,14 @@ class _show_strech_startState extends State<show_strech_start> {
                   // color: Colors.white,
                   height: 30,
                   minWidth: 15,
-                  onPressed: () => Get.to(const show_strech_set()),
+                  onPressed: () {
+                    Navigator.pop(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return const show_strech_set();
+                      }),
+                    );
+                  },
                   child: const Icon(
                     Icons.arrow_back_ios_outlined,
                     size: 15,

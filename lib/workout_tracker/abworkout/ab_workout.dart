@@ -3,6 +3,7 @@
 import 'package:fittnessapp/workout_tracker/abworkout/ab_start.dart';
 import 'package:fittnessapp/workout_tracker/main_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 // ignore: camel_case_types
 class ab_workout extends StatefulWidget {
@@ -34,7 +35,7 @@ class _ab_workoutState extends State<ab_workout> {
                   height: 30,
                   minWidth: 15,
                   onPressed: () {
-                    Navigator.of(context).push(
+                    Navigator.of(context).pop(
                       MaterialPageRoute(builder: (context) {
                         return const workout_tracks();
                       }),
@@ -174,11 +175,7 @@ class _pageState extends State<page> {
         Padding(
           padding: const EdgeInsets.only(bottom: 30),
           child: InkWell(
-            onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                return const ab_start();
-              }));
-            },
+            onTap: () => Get.to(() => const ab_start()),
             child: Container(
               height: 50,
               width: MediaQuery.of(context).size.width - 50,

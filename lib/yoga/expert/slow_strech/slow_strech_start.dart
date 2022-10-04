@@ -36,7 +36,14 @@ class _slow_strech_start2State extends State<slow_strech_start2> {
                   // color: Colors.white,
                   height: 30,
                   minWidth: 15,
-                  onPressed: () => Get.to(const slow_strech_set2()),
+                  onPressed: () {
+                    Navigator.pop(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return const slow_strech_set2();
+                      }),
+                    );
+                  },
                   child: const Icon(
                     Icons.arrow_back_ios_outlined,
                     size: 15,

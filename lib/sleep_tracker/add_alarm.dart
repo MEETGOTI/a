@@ -1,6 +1,7 @@
 import 'package:fittnessapp/sleep_tracker/sleep_schedule.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
+import 'package:get/get.dart';
 
 // ignore: camel_case_types
 class add_alarms extends StatefulWidget {
@@ -32,7 +33,7 @@ class _add_alarmsState extends State<add_alarms> {
                   height: 30,
                   minWidth: 15,
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pop(
                       context,
                       MaterialPageRoute(builder: (context) {
                         return const sleep_schedules();
@@ -306,20 +307,23 @@ class _new_pageState extends State<new_page> {
           const Spacer(),
           Padding(
             padding: const EdgeInsets.only(bottom: 40),
-            child: Container(
-              height: 50,
-              width: MediaQuery.of(context).size.width - 60,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  color: Colors.blue.withOpacity(0.7)),
-              child: const Align(
-                alignment: Alignment.center,
-                child: Text(
-                  'Add',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w400),
+            child: InkWell(
+              onTap: () => Get.to(() => const sleep_schedules()),
+              child: Container(
+                height: 50,
+                width: MediaQuery.of(context).size.width - 60,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    color: Colors.blue.withOpacity(0.7)),
+                child: const Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    'Add',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w400),
+                  ),
                 ),
               ),
             ),

@@ -4,6 +4,7 @@ import 'package:fittnessapp/workout_tracker/body_workout.dart';
 import 'package:fittnessapp/workout_tracker/fullbody/fullbody_workout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
+import 'package:get/get.dart';
 
 // ignore: camel_case_types
 class workout_tracks extends StatefulWidget {
@@ -36,7 +37,7 @@ class _workout_tracksState extends State<workout_tracks> {
                   height: 30,
                   minWidth: 15,
                   onPressed: () {
-                    Navigator.of(context).push(
+                    Navigator.of(context).pop(
                       MaterialPageRoute(builder: (context) {
                         return const bottum_page();
                       }),
@@ -134,13 +135,7 @@ class _pageState extends State<page> {
                           Padding(
                             padding: const EdgeInsets.only(right: 20),
                             child: InkWell(
-                              onTap: () {
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(builder: (context) {
-                                    return const full_workout();
-                                  }),
-                                );
-                              },
+                              onTap: () => Get.to(() => const full_workout()),
                               child: Container(
                                 height: 30,
                                 width: 60,

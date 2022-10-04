@@ -102,7 +102,7 @@ class _lowerbody_startState extends State<lowerbody_start>
                   height: 30,
                   minWidth: 15,
                   onPressed: () {
-                    Navigator.of(context).push(
+                    Navigator.of(context).pop(
                       MaterialPageRoute(builder: (context) {
                         return const fullbody();
                       }),

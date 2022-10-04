@@ -20,7 +20,7 @@ class _profileState extends State<profile> {
       body: Column(
         children: const [
           SizedBox(
-            height: 55,
+            height: 45,
           ),
           profile_1(),
         ],

@@ -2,6 +2,7 @@ import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:fittnessapp/yoga/intermediat/badtime/badtime_yoga_set.dart';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 // ignore: camel_case_types
@@ -36,7 +37,8 @@ class _badime_start1State extends State<badime_start1> {
                   height: 30,
                   minWidth: 15,
                   onPressed: () {
-                    Navigator.of(context).push(
+                    Navigator.pop(
+                      context,
                       MaterialPageRoute(builder: (context) {
                         return const badtime_set1();
                       }),

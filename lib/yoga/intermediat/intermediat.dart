@@ -6,6 +6,7 @@ import 'package:fittnessapp/yoga/intermediat/show_flow/slow_flow.dart';
 import 'package:fittnessapp/yoga/intermediat/show_strech/slow_strech.dart';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 // ignore: camel_case_types
 class Intermediat extends StatefulWidget {
@@ -97,13 +98,7 @@ class _pageState extends State<page> {
           children: [
             for (int a = 0; a < data.length; a++) ...[
               InkWell(
-                onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) {
-                      return navi[a];
-                    }),
-                  );
-                },
+                onTap: () => Get.to(navi[a]),
                 child: Stack(
                   children: [
                     ClipRRect(

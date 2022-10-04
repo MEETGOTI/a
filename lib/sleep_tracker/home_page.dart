@@ -3,6 +3,7 @@ import 'package:fittnessapp/sleep_tracker/sleep_chart.dart';
 import 'package:fittnessapp/sleep_tracker/sleep_schedule.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
+import 'package:get/get.dart';
 
 // ignore: camel_case_types
 class sleep extends StatefulWidget {
@@ -34,7 +35,7 @@ class _sleepState extends State<sleep> {
                   height: 30,
                   minWidth: 15,
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pop(
                       context,
                       MaterialPageRoute(builder: (context) {
                         return const bottum_page();
@@ -176,14 +177,7 @@ class _new_pageState extends State<new_page> {
                     Padding(
                       padding: const EdgeInsets.only(right: 15),
                       child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) {
-                              return const sleep_schedules();
-                            }),
-                          );
-                        },
+                        onTap: () => Get.to(() => const sleep_schedules()),
                         child: Container(
                           height: 30,
                           width: 60,

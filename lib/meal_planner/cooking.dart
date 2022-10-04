@@ -34,7 +34,7 @@ class _cookingsState extends State<cookings> {
                   height: 30,
                   minWidth: 15,
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pop(
                       context,
                       MaterialPageRoute(builder: (context) {
                         return const breakfasts();

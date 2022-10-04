@@ -33,7 +33,7 @@ class _meal_schedulesState extends State<meal_schedules> {
                   height: 30,
                   minWidth: 15,
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pop(
                       context,
                       MaterialPageRoute(builder: (context) {
                         return const bottum_page();

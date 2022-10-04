@@ -101,14 +101,8 @@ class _homeState extends State<home> {
                                 'assets/images/Notification-Icon.png',
                                 fit: BoxFit.fill,
                               ),
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) {
-                                    return const notification_page();
-                                  }),
-                                );
-                              },
+                              onPressed: () =>
+                                  Get.to(() => const notification_page()),
                             ),
                           ],
                         ),
@@ -407,13 +401,7 @@ class _MainPageState extends State<MainPage> {
                   Padding(
                     padding: const EdgeInsets.only(right: 20),
                     child: InkWell(
-                      onTap: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) {
-                            return const workout_tracks();
-                          }),
-                        );
-                      },
+                      onTap: () => Get.to(() => const workout_tracks()),
                       child: Container(
                         height: 30,
                         width: 60,

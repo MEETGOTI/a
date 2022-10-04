@@ -35,7 +35,7 @@ class _TodaysTaskScreenState extends State<TodaysTaskScreen> {
                     height: 30,
                     minWidth: 15,
                     onPressed: () {
-                      Navigator.of(context).push(
+                      Navigator.of(context).pop(
                         MaterialPageRoute(builder: (context) {
                           return const full_workout();
                         }),

@@ -8,6 +8,7 @@ import 'package:fittnessapp/workout_tracker/fullbody/fullbody_start.dart';
 
 import 'package:fittnessapp/workout_tracker/main_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 // ignore: camel_case_types
 class fullbody extends StatefulWidget {
@@ -39,7 +40,7 @@ class _fullbodyState extends State<fullbody> {
                   height: 30,
                   minWidth: 15,
                   onPressed: () {
-                    Navigator.of(context).push(
+                    Navigator.of(context).pop(
                       MaterialPageRoute(builder: (context) {
                         return const workout_tracks();
                       }),
@@ -140,13 +141,7 @@ class _listState extends State<list> {
                       return ClipRRect(
                         borderRadius: BorderRadius.circular(30),
                         child: InkWell(
-                          onTap: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(builder: (context) {
-                                return navi[index];
-                              }),
-                            );
-                          },
+                          onTap: () => Get.to(() => navi[index]),
                           child: Card(
                             elevation: 0.0,
                             child: ListTile(
@@ -206,13 +201,7 @@ class _pageState extends State<page> {
         Padding(
           padding: const EdgeInsets.only(bottom: 30),
           child: InkWell(
-            onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) {
-                  return const body_start();
-                }),
-              );
-            },
+            onTap: () => Get.to(() => const body_start()),
             child: Container(
               height: 50,
               width: MediaQuery.of(context).size.width - 50,

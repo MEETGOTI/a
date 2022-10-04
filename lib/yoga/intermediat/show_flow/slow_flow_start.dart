@@ -2,6 +2,7 @@ import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:fittnessapp/yoga/intermediat/show_flow/slow_flow_set.dart';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 // ignore: camel_case_types
@@ -35,13 +36,7 @@ class _show_flow_start1State extends State<show_flow_start1> {
                   // color: Colors.white,
                   height: 30,
                   minWidth: 15,
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) {
-                        return const show_flow_set1();
-                      }),
-                    );
-                  },
+                  onPressed: () => Get.to(() => const show_flow_set1()),
                   child: const Icon(
                     Icons.arrow_back_ios_outlined,
                     size: 15,

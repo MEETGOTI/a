@@ -31,7 +31,7 @@ class _notification_pageState extends State<notification_page> {
                   height: 30,
                   minWidth: 15,
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pop(
                       context,
                       MaterialPageRoute(builder: (context) {
                         return const bottum_page();

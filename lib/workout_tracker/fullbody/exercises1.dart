@@ -32,7 +32,7 @@ class _exercises_1State extends State<exercises_1> {
                     height: 30,
                     minWidth: 15,
                     onPressed: () {
-                      Navigator.of(context).push(
+                      Navigator.of(context).pop(
                         MaterialPageRoute(builder: (context) {
                           return const fullbody();
                         }),

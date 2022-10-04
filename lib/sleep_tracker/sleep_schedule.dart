@@ -2,6 +2,7 @@ import 'package:fittnessapp/sleep_tracker/add_alarm.dart';
 import 'package:fittnessapp/sleep_tracker/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
@@ -35,7 +36,7 @@ class _sleep_schedulesState extends State<sleep_schedules> {
                   height: 30,
                   minWidth: 15,
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pop(
                       context,
                       MaterialPageRoute(builder: (context) {
                         return const sleep();
@@ -69,13 +70,7 @@ class _sleep_schedulesState extends State<sleep_schedules> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.purple.withOpacity(0.6),
         child: const Icon(Icons.add),
-        onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) {
-              return const add_alarms();
-            }),
-          );
-        },
+        onPressed: () => Get.to(() => const add_alarms()),
       ),
     );
   }

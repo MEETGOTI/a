@@ -21,6 +21,7 @@ class _MyWidgetState extends State<banner> {
     late CarouselSlider carouselSlider;
     return Expanded(
       child: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -47,10 +48,11 @@ class _MyWidgetState extends State<banner> {
                 );
               }).toList(),
               options: CarouselOptions(
-                height: MediaQuery.of(context).size.height / 1.6,
+                height: MediaQuery.of(context).size.height / 1.9,
                 initialPage: 0,
                 enlargeCenterPage: true,
                 autoPlay: true,
+                viewportFraction: 0.7,
                 reverse: false,
                 enableInfiniteScroll: true,
                 autoPlayInterval: const Duration(seconds: 2),

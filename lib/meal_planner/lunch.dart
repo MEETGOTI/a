@@ -1,6 +1,7 @@
 import 'package:fittnessapp/bottom_bar/bottom_nevigation.dart';
 import 'package:fittnessapp/meal_planner/cooking.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 // ignore: camel_case_types
 class lunch extends StatefulWidget {
@@ -32,7 +33,7 @@ class _lunchState extends State<lunch> {
                   height: 30,
                   minWidth: 15,
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pop(
                       context,
                       MaterialPageRoute(builder: (context) {
                         return const bottum_page();
@@ -375,12 +376,7 @@ class _pageState extends State<page> {
                           Padding(
                             padding: const EdgeInsets.only(left: 15, top: 20),
                             child: InkWell(
-                              onTap: () {
-                                Navigator.of(context)
-                                    .push(MaterialPageRoute(builder: (context) {
-                                  return const cookings();
-                                }));
-                              },
+                              onTap: () => Get.to(() => const cookings()),
                               child: Container(
                                 height: 35,
                                 width: 85,
@@ -430,12 +426,7 @@ class _pageState extends State<page> {
                           Padding(
                             padding: const EdgeInsets.only(left: 15, top: 20),
                             child: InkWell(
-                              onTap: () {
-                                Navigator.of(context)
-                                    .push(MaterialPageRoute(builder: (context) {
-                                  return const cookings();
-                                }));
-                              },
+                              onTap: () => Get.to(() => const cookings()),
                               child: Container(
                                 height: 35,
                                 width: 85,
@@ -531,12 +522,7 @@ class _listState extends State<list> {
                 title: Text(itemsL[index].title),
                 subtitle: Text(itemsL[index].discription),
                 trailing: InkWell(
-                  onTap: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (context) {
-                      return const cookings();
-                    }));
-                  },
+                  onTap: () => Get.to(() => const cookings()),
                   child: const Icon(
                     Icons.arrow_circle_right_outlined,
                   ),

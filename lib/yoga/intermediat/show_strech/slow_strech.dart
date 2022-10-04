@@ -1,7 +1,7 @@
 import 'package:fittnessapp/yoga/intermediat/intermediat.dart';
-import 'package:fittnessapp/yoga/intermediat/show_strech/slow_strech_set.dart';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 // ignore: camel_case_types
 class Slow_strech1 extends StatefulWidget {
@@ -33,13 +33,7 @@ class _Slow_strech1State extends State<Slow_strech1> {
                     // color: Colors.white,
                     height: 30,
                     minWidth: 15,
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) {
-                          return const Intermediat();
-                        }),
-                      );
-                    },
+                    onPressed: () => Get.to(() => const Intermediat()),
                     child: const Icon(
                       Icons.arrow_back_ios_outlined,
                       size: 15,
@@ -66,12 +60,7 @@ class _Slow_strech1State extends State<Slow_strech1> {
           Padding(
             padding: const EdgeInsets.only(bottom: 20),
             child: InkWell(
-              onTap: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) {
-                  return const Slow_strech_set1();
-                }));
-              },
+              onTap: () => Get.to(() => const Slow_strech1()),
               child: Container(
                 height: 50,
                 width: MediaQuery.of(context).size.width - 50,

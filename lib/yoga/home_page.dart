@@ -21,7 +21,7 @@ class _YogaState extends State<Yoga> {
       body: Column(
         children: const [
           SizedBox(
-            height: 45,
+            height: 20,
           ),
           page(),
         ],
@@ -117,13 +117,7 @@ class _pageState extends State<page> {
                     Padding(
                       padding: const EdgeInsets.only(left: 5),
                       child: InkWell(
-                        onTap: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(builder: (context) {
-                              return page[a];
-                            }),
-                          );
-                        },
+                        onTap: () => Get.to(() => page[a]),
                         child: Card(
                           elevation: 2,
                           shadowColor: Colors.black,
@@ -381,6 +375,7 @@ class _page2State extends State<page2> {
       "time": "40:00 Min",
     },
   ];
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(

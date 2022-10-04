@@ -1,7 +1,7 @@
-import 'package:fittnessapp/meal_planner/lunch.dart';
 import 'package:fittnessapp/meal_planner/meal_chart.dart';
 import 'package:fittnessapp/meal_planner/meal_schedule.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'breakfast.dart';
 
@@ -157,14 +157,7 @@ class _new_pageState extends State<new_page> {
                     Padding(
                       padding: const EdgeInsets.only(right: 15),
                       child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) {
-                              return const meal_schedules();
-                            }),
-                          );
-                        },
+                        onTap: () => Get.to(() => const meal_schedules()),
                         child: Container(
                           height: 30,
                           width: 60,
@@ -321,12 +314,7 @@ class _new_pageState extends State<new_page> {
                                 padding:
                                     const EdgeInsets.only(left: 15, bottom: 10),
                                 child: InkWell(
-                                  onTap: () {
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(builder: (context) {
-                                      return const breakfasts();
-                                    }));
-                                  },
+                                  onTap: () => Get.to(() => const breakfasts()),
                                   child: Container(
                                     height: 25,
                                     width: 70,
@@ -401,12 +389,7 @@ class _new_pageState extends State<new_page> {
                                 padding:
                                     const EdgeInsets.only(left: 15, bottom: 10),
                                 child: InkWell(
-                                  onTap: () {
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(builder: (context) {
-                                      return const lunch();
-                                    }));
-                                  },
+                                  onTap: () => Get.to(() => const breakfasts()),
                                   child: Container(
                                     height: 25,
                                     width: 70,

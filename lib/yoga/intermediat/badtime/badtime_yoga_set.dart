@@ -1,6 +1,7 @@
 import 'package:fittnessapp/yoga/intermediat/badtime/badtime_start.dart';
 import 'package:fittnessapp/yoga/intermediat/badtime/badtime_yoga.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 // ignore: camel_case_types
 class badtime_set1 extends StatefulWidget {
@@ -31,13 +32,7 @@ class _badtime_set1State extends State<badtime_set1> {
                   // color: Colors.white,
                   height: 30,
                   minWidth: 15,
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) {
-                        return const bad_time1();
-                      }),
-                    );
-                  },
+                  onPressed: () => Get.to(() => const bad_time1()),
                   child: const Icon(
                     Icons.arrow_back_ios_outlined,
                     size: 15,

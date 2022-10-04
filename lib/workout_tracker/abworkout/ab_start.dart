@@ -101,7 +101,7 @@ class _ab_startState extends State<ab_start> with TickerProviderStateMixin {
                   height: 30,
                   minWidth: 15,
                   onPressed: () {
-                    Navigator.of(context).push(
+                    Navigator.of(context).pop(
                       MaterialPageRoute(builder: (context) {
                         return const fullbody();
                       }),
