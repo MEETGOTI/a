@@ -60,8 +60,6 @@ dependencies:
   cloud_firestore: "^2.4.0"
   firebase_auth: ^3.11.0
   dropdown_textfield: ^1.0.4
-  assets_audio_player: ^3.0.5
-  flutter_neumorphic: ^3.2.0
   
 
  

@@ -2,8 +2,6 @@ import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:fittnessapp/yoga/beginner/badtime/badtime_yoga_set.dart';
 
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/get_navigation.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 // ignore: camel_case_types

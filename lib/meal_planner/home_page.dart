@@ -3,7 +3,7 @@ import 'package:fittnessapp/meal_planner/meal_schedule.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'breakfast.dart';
+import 'breakfast/breakfast.dart';
 
 // ignore: camel_case_types
 class meal_plan extends StatefulWidget {
@@ -19,9 +19,6 @@ class _meal_planState extends State<meal_plan> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(children: const [
-        SizedBox(
-          height: 35,
-        ),
         new_page(),
       ]),
     );
@@ -66,7 +63,7 @@ class _new_pageState extends State<new_page> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Padding(
-                  padding: EdgeInsets.only(left: 30),
+                  padding: EdgeInsets.only(left: 20),
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -79,7 +76,7 @@ class _new_pageState extends State<new_page> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(right: 35),
+                  padding: const EdgeInsets.only(right: 25),
                   child: Container(
                     height: 30,
                     width: 100,
@@ -126,13 +123,13 @@ class _new_pageState extends State<new_page> {
               height: 5,
             ),
             const Padding(
-              padding: EdgeInsets.only(right: 25, left: 20),
+              padding: EdgeInsets.symmetric(horizontal: 15),
               child: SizedBox(height: 200, child: meal_charts()),
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 20, left: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Container(
-                height: 40,
+                height: MediaQuery.of(context).size.height / 18,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     gradient: LinearGradient(colors: [
@@ -159,8 +156,8 @@ class _new_pageState extends State<new_page> {
                       child: InkWell(
                         onTap: () => Get.to(() => const meal_schedules()),
                         child: Container(
-                          height: 30,
-                          width: 60,
+                          height: MediaQuery.of(context).size.height / 25,
+                          width: MediaQuery.of(context).size.height / 13,
                           decoration: BoxDecoration(
                               color: Colors.purple.shade200,
                               borderRadius: BorderRadius.circular(15)),
@@ -189,7 +186,7 @@ class _new_pageState extends State<new_page> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Padding(
-                  padding: EdgeInsets.only(left: 30),
+                  padding: EdgeInsets.only(left: 20),
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -202,7 +199,7 @@ class _new_pageState extends State<new_page> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(right: 35),
+                  padding: const EdgeInsets.only(right: 25),
                   child: Container(
                     height: 30,
                     width: 110,
@@ -250,11 +247,11 @@ class _new_pageState extends State<new_page> {
               height: 10,
             ),
             const Padding(
-              padding: EdgeInsets.only(left: 30),
+              padding: EdgeInsets.only(left: 20),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'Daily Meal Schedule',
+                  'Custom Meal Schedule',
                   style: TextStyle(
                     fontWeight: FontWeight.w900,
                     fontSize: 16,
@@ -266,160 +263,7 @@ class _new_pageState extends State<new_page> {
             const SizedBox(
               height: 10,
             ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 30),
-                    child: Stack(
-                      children: [
-                        Container(
-                          height: 170,
-                          width: 155,
-                          decoration: BoxDecoration(
-                            borderRadius: const BorderRadius.only(
-                              topRight: Radius.circular(70),
-                              topLeft: Radius.circular(20),
-                              bottomLeft: Radius.circular(20),
-                              bottomRight: Radius.circular(20),
-                            ),
-                            color: Colors.blue.withOpacity(0.3),
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Padding(
-                                padding: EdgeInsets.only(left: 15),
-                                child: Text(
-                                  'Breakfast',
-                                  style: TextStyle(fontWeight: FontWeight.w500),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              const Padding(
-                                padding: EdgeInsets.only(left: 15),
-                                child: Text(
-                                  '120+ Foods',
-                                  style: TextStyle(color: Colors.black45),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 15, bottom: 10),
-                                child: InkWell(
-                                  onTap: () => Get.to(() => const breakfasts()),
-                                  child: Container(
-                                    height: 25,
-                                    width: 70,
-                                    decoration: BoxDecoration(
-                                        color: Colors.blue.shade200,
-                                        borderRadius:
-                                            BorderRadius.circular(15)),
-                                    child: const Align(
-                                      alignment: Alignment.center,
-                                      child: Text(
-                                        'Select',
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 40, top: 5),
-                          child: Image.asset('assets/images/Vector (10).png'),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 5,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Stack(
-                      children: [
-                        Container(
-                          height: 170,
-                          width: 155,
-                          decoration: BoxDecoration(
-                            borderRadius: const BorderRadius.only(
-                              topRight: Radius.circular(70),
-                              topLeft: Radius.circular(20),
-                              bottomLeft: Radius.circular(20),
-                              bottomRight: Radius.circular(20),
-                            ),
-                            color: Colors.purple.withOpacity(0.3),
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Padding(
-                                padding: EdgeInsets.only(left: 15),
-                                child: Text(
-                                  'Lunch',
-                                  style: TextStyle(fontWeight: FontWeight.w500),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              const Padding(
-                                padding: EdgeInsets.only(left: 15),
-                                child: Text(
-                                  '130+ Foods',
-                                  style: TextStyle(color: Colors.black45),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 15, bottom: 10),
-                                child: InkWell(
-                                  onTap: () => Get.to(() => const breakfasts()),
-                                  child: Container(
-                                    height: 25,
-                                    width: 70,
-                                    decoration: BoxDecoration(
-                                        color: Colors.purple.shade200,
-                                        borderRadius:
-                                            BorderRadius.circular(15)),
-                                    child: const Align(
-                                      alignment: Alignment.center,
-                                      child: Text(
-                                        'Select',
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 40, top: 5),
-                          child: Image.asset('assets/images/Vector (11).png'),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            const Page2(),
             const SizedBox(
               height: 10,
             ),
@@ -476,6 +320,125 @@ class _listState extends State<list> {
             ),
           );
         },
+      ),
+    );
+  }
+}
+
+class Page2 extends StatefulWidget {
+  const Page2({Key? key}) : super(key: key);
+
+  @override
+  State<Page2> createState() => _Page2State();
+}
+
+class _Page2State extends State<Page2> {
+  var items = [
+    {
+      "images": 'assets/images/Vector (10).png',
+      "titles": 'Breakfast',
+      "discriptions": '120+ Foods',
+    },
+    {
+      "images": 'assets/images/Vector (11).png',
+      "titles": 'Lunch',
+      "discriptions": '130+ Foods',
+    },
+    {
+      "images": 'assets/images/Vector (11).png',
+      "titles": 'Dinner',
+      "discriptions": '100+ Foods',
+    },
+  ];
+
+  var navi = ['breakfast', 'dinner', 'lunch'];
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: [
+          for (int a = 0; a < items.length; a++) ...[
+            Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Stack(
+                children: [
+                  Container(
+                    height: MediaQuery.of(context).size.height / 4.7,
+                    width: MediaQuery.of(context).size.width / 2.4,
+                    decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.only(
+                        topRight: Radius.circular(70),
+                        topLeft: Radius.circular(20),
+                        bottomLeft: Radius.circular(20),
+                        bottomRight: Radius.circular(20),
+                      ),
+                      color: a % 2 == 0
+                          ? Colors.blue.withOpacity(0.3)
+                          : Colors.purple.withOpacity(0.3),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 15),
+                          child: Text(
+                            items[a]['titles'].toString(),
+                            style: const TextStyle(fontWeight: FontWeight.w500),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 15),
+                          child: Text(
+                            items[a]['discriptions'].toString(),
+                            style: const TextStyle(color: Colors.black45),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 15, bottom: 10),
+                          child: InkWell(
+                            onTap: () => Get.to(
+                              () => breakfasts(time_meal: navi[a]),
+                            ),
+                            child: Container(
+                              height: MediaQuery.of(context).size.height / 30,
+                              width: MediaQuery.of(context).size.width / 4.7,
+                              decoration: BoxDecoration(
+                                  color: a % 2 == 0
+                                      ? Colors.blue.withOpacity(0.3)
+                                      : Colors.purple.withOpacity(0.3),
+                                  borderRadius: BorderRadius.circular(15)),
+                              child: const Align(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  'Select',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 40, top: 5),
+                    child: Image.asset(
+                      items[a]['images'].toString(),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ],
       ),
     );
   }

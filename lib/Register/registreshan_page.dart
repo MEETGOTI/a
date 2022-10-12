@@ -17,6 +17,8 @@ class _profile_pageState extends State<profile_page> {
   final _formKey = GlobalKey<FormState>();
 
   var gander = "";
+  // ignore: non_constant_identifier_names
+  var vag_nonvag = "";
   // ignore: prefer_typing_uninitialized_variables
   var birthdate;
   double weight = 0;
@@ -25,7 +27,10 @@ class _profile_pageState extends State<profile_page> {
   var h;
   // ignore: prefer_typing_uninitialized_variables
   var w;
+
   final ganderController = TextEditingController();
+  // ignore: non_constant_identifier_names
+  final vag_nonvagcontroller = TextEditingController();
   final weightController = TextEditingController();
   final heightController = TextEditingController();
 
@@ -33,6 +38,7 @@ class _profile_pageState extends State<profile_page> {
   void dispose() {
     // Clean up the controller when the widget is disposed.
     ganderController.dispose();
+    vag_nonvagcontroller.dispose();
     dateController.dispose();
     weightController.dispose();
     heightController.dispose();
@@ -41,6 +47,7 @@ class _profile_pageState extends State<profile_page> {
 
   clearText() {
     ganderController.clear();
+    vag_nonvagcontroller.clear();
     dateController.clear();
     weightController.clear();
     heightController.clear();
@@ -51,7 +58,8 @@ class _profile_pageState extends State<profile_page> {
   CollectionReference users =
       FirebaseFirestore.instance.collection('user_data');
 
-  Future<void> addUser(ganderr, birthdatee, weightt, heightt) {
+  // ignore: non_constant_identifier_names
+  Future<void> addUser(ganderr, vag_nonvag, birthdatee, weightt, heightt) {
     return users
         .doc(_auth.currentUser!.uid)
         .collection('user_data')
@@ -59,6 +67,7 @@ class _profile_pageState extends State<profile_page> {
         .collection("user_details")
         .add({
           'Gander': ganderr,
+          'vag_nonvag': vag_nonvag,
           'Age': birthdatee,
           'weight': weightt,
           'height': heightt
@@ -80,6 +89,8 @@ class _profile_pageState extends State<profile_page> {
 
   String dropdownValue = 'Choose Gender';
 
+  String dropdownValue1 = "Vag";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,7 +103,7 @@ class _profile_pageState extends State<profile_page> {
               child: Column(
                 children: [
                   SizedBox(
-                    height: MediaQuery.of(context).size.height / 3,
+                    height: MediaQuery.of(context).size.height / 3.5,
                     child: Padding(
                       padding: const EdgeInsets.only(left: 20),
                       child: Image.asset('assets/images/Vector-Section.png'),
@@ -122,6 +133,50 @@ class _profile_pageState extends State<profile_page> {
                         Padding(
                           padding: const EdgeInsets.only(
                               right: 30, left: 30, top: 30),
+                          child: DropdownButtonFormField(
+                            decoration: InputDecoration(
+                              focusedBorder: const OutlineInputBorder(
+                                borderSide:
+                                    BorderSide(color: Colors.blue, width: 2.0),
+                              ),
+                              prefixIcon: const Icon(
+                                Icons.group_outlined,
+                              ),
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              enabledBorder: InputBorder.none,
+                              filled: true,
+                            ),
+                            dropdownColor: Colors.blue,
+                            value: dropdownValue1,
+                            onChanged: (String? newValue) {
+                              setState(() {
+                                dropdownValue1 = newValue!;
+                              });
+                            },
+                            items: <String>[
+                              'Vag',
+                              'Non-Vag',
+                              'Vagen',
+                            ].map<DropdownMenuItem<String>>((String value) {
+                              return DropdownMenuItem<String>(
+                                value: value,
+                                child: Text(
+                                  value,
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              );
+                            }).toList(),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              right: 30, left: 30, top: 10),
                           child: DropdownButtonFormField(
                             decoration: InputDecoration(
                               focusedBorder: const OutlineInputBorder(
@@ -362,6 +417,7 @@ class _profile_pageState extends State<profile_page> {
                                 if (_formKey.currentState!.validate()) {
                                   setState(() {
                                     gander = dropdownValue;
+                                    vag_nonvag = dropdownValue1;
                                     birthdate = dateController;
                                     h = heightController;
                                     w = weightController;
@@ -372,8 +428,8 @@ class _profile_pageState extends State<profile_page> {
                                   })));
                                 }
 
-                                addUser(dropdownValue, dateController.text,
-                                    weight, height);
+                                addUser(dropdownValue, dropdownValue1,
+                                    dateController.text, weight, height);
 
                                 clearText();
                               },

@@ -2,7 +2,6 @@ import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:fittnessapp/yoga/intermediat/inner_peace/inner_peace_set.dart';
 
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 // ignore: camel_case_types

@@ -1,4 +1,3 @@
-import 'package:fittnessapp/yoga/intermediat/inner_peace/inner_peace_start.dart';
 import 'package:fittnessapp/yoga/intermediat/show_flow/slow_flow.dart';
 import 'package:fittnessapp/yoga/intermediat/show_flow/slow_flow_start.dart';
 import 'package:flutter/material.dart';

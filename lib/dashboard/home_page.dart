@@ -51,7 +51,7 @@ class _homeState extends State<home> {
             body: Column(
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.height / 30,
+                  height: MediaQuery.of(context).size.height / 80,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
